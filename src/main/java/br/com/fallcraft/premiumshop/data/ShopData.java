@@ -13,8 +13,9 @@ public class ShopData {
 
         try {
             String newPlayer = "insert into premiumshop (price, amount , block , title , command , block_id ) values (?,?,?,?,?,?)";
-
-            PreparedStatement preparedStatement = ConnectionFactory.getConnection().prepareStatement(newPlayer);
+            ConnectionFactory connectionFactory = new ConnectionFactory();
+            connectionFactory.connect();
+            PreparedStatement preparedStatement = connectionFactory.getConnection().prepareStatement(newPlayer);
             preparedStatement.setDouble(1, item.getPrice());
             preparedStatement.setDouble(2, item.getAmount());
             preparedStatement.setString(3, item.getBlockId());
@@ -22,7 +23,9 @@ public class ShopData {
             preparedStatement.setString(5, item.getCommnad());
             preparedStatement.setString(6, item.getType());
             preparedStatement.execute();
-        } catch (SQLException e) {
+
+            connectionFactory.disconnect();
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -31,8 +34,10 @@ public class ShopData {
         List<Item> itens = new ArrayList<>();
 
         try {
+            ConnectionFactory connectionFactory = new ConnectionFactory();
+            connectionFactory.connect();
             String query = "select * from premiumshop";
-            PreparedStatement sets = ConnectionFactory.getConnection().prepareStatement(query);
+            PreparedStatement sets = connectionFactory.getConnection().prepareStatement(query);
             ResultSet results = sets.executeQuery();
 
             while (results.next()) {
@@ -45,7 +50,10 @@ public class ShopData {
                                 , results.getString("block_id")
                                 , results.getDouble("price")));
             }
-        } catch (SQLException e) {
+
+
+            connectionFactory.disconnect();
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -58,9 +66,10 @@ public class ShopData {
 
         try {
             String query = "select * from premiumshop where id = ?";
+            ConnectionFactory connectionFactory = new ConnectionFactory();
+            connectionFactory.connect();
 
-
-            PreparedStatement sets = ConnectionFactory.getConnection().prepareStatement(query);
+            PreparedStatement sets = connectionFactory.getConnection().prepareStatement(query);
             sets.setInt(1, id);
             ResultSet results = sets.executeQuery();
 
@@ -74,7 +83,10 @@ public class ShopData {
                                 , results.getString("block_id")
                                 , results.getDouble("price"));
             }
-        } catch (SQLException e) {
+
+
+            connectionFactory.disconnect();
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

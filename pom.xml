@@ -109,5 +109,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
         </dependency>
+
+        <dependency>
+            <artifactId>QCoin</artifactId>
+            <groupId>QCoin</groupId>
+            <scope>system</scope>
+            <version>1.2-SNAPSHOT</version>
+            <systemPath>A:/Projetos/qcoin/target/QCoin-1.2-SNAPSHOT.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

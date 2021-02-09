@@ -1,6 +1,8 @@
 package br.com.fallcraft.premiumshop.data;
 
 
+
+
 import br.com.fallcraft.premiumshop.core.PremiumShop;
 
 import java.sql.Connection;
@@ -9,10 +11,10 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
     public static String databaseType;
-    private static Connection connection = null;
+    private Connection connection = null;
     private final PremiumShop pl = PremiumShop.plugin;
 
-    private ConnectionFactory() throws ClassNotFoundException, SQLException {
+    public void connect() throws ClassNotFoundException, SQLException {
         if (databaseType.equals("sqlite")) {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:" + pl.getDataFolder() + "/premiumshop.db");
@@ -28,22 +30,11 @@ public class ConnectionFactory {
         }
     }
 
-    public static Connection getConnection() {
-        try {
-            if (connection == null) {
-                new ConnectionFactory();
-            } else {
-                System.out.println(connection.isClosed() + "");
-                if (connection.isClosed()) {
-                    new ConnectionFactory();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-
+    public Connection getConnection() {
         return connection;
+    }
+
+    public void disconnect() throws SQLException {
+        this.connection.close();
     }
 }

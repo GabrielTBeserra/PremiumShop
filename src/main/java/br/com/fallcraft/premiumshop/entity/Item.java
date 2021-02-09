@@ -95,13 +95,11 @@ public class Item {
         String sCommand = commnad != null ? "&a" : "&c" + "command";
         String sBlockId = blockId != null ? "&a" : "&c" + "item";
         String sPrice = price > 0 ? "&a" : "&c" + "price";
-        String sDesc = price > 0 ? "&a" : "&c" + "desc";
 
         sender.sendMessage(Ultilities.formater(sAmount));
         sender.sendMessage(Ultilities.formater(sCommand));
         sender.sendMessage(Ultilities.formater(sBlockId));
         sender.sendMessage(Ultilities.formater(sPrice));
-        sender.sendMessage(Ultilities.formater(sDesc));
 
 
     }

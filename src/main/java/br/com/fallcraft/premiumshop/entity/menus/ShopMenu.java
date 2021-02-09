@@ -1,12 +1,10 @@
 package br.com.fallcraft.premiumshop.entity.menus;
 
-import br.com.fallcraft.premiumshop.core.PremiumShop;
 import br.com.fallcraft.premiumshop.data.ShopData;
 import br.com.fallcraft.premiumshop.entity.Item;
 import br.com.fallcraft.premiumshop.entity.Menu;
 import br.com.fallcraft.premiumshop.utils.Ultilities;
 import com.quantum.qcoin.api.QCoinAPI;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -71,12 +69,12 @@ public class ShopMenu extends Menu {
 
 
         if (QCoinAPI.getCoin(p) >= item.getPrice()) {
-            p.sendMessage(Ultilities.formater("&aItem " + item.getTitle() + " &acomprado com sucesso!"));
-            QCoinAPI.takeCoin(p, item.getPrice());
-            Bukkit.dispatchCommand(PremiumShop.plugin.getServer().getConsoleSender(), cmd);
+            ConfirmBuy confirmBuy = new ConfirmBuy(Integer.parseInt(striped[1]), p);
+            confirmBuy.open();
+
         } else {
             p.sendMessage(Ultilities.formater("&cVoce nao possui &6&lCOINS &co suficiente"));
-            p.sendMessage(Ultilities.formater("&9Voce pode obter mias aqui &ahttps://loja.fallcraft.com.br"));
+            p.sendMessage(Ultilities.formater("&9Voce pode obter mais aqui &ahttps://loja.fallcraft.com.br"));
         }
 
 
