@@ -1,0 +1,18 @@
+###################################################################
+#                            PremiumShop                          #
+#             Criado por 1Urso (Gabriel) - 1Urso#8730             #
+#                                                                 #
+###################################################################
+
+
+database:
+  # Tipos suportados MYSQL ou SQLITE
+  type: MYSQL
+  # Em caso de MYSQL informar os seguintes dados
+  host: 127.0.0.1:3306
+  # Senha do banco
+  password: root
+  # Usuario do banco
+  user: root
+  # Qual database a ser usado
+  database: data

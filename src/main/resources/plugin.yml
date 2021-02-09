@@ -1,0 +1,34 @@
+name: PremiumShop
+version: ${project.version}
+main: br.com.fallcraft.premiumshop.core.PremiumShop
+api-version: 1.8
+authors: [ 1Ursoo ]
+commands:
+  createitem:
+    permission: teste
+    description: teste
+    usage: teste
+  finishitem:
+    permission: teste
+    description: teste
+    usage: teste
+  setamount:
+    permission: teste
+    description: teste
+    usage: teste
+  setitem:
+    permission: teste
+    description: teste
+    usage: teste
+  setcommand:
+    permission: teste
+    description: teste
+    usage: teste
+  setprice:
+    permission: teste
+    description: teste
+    usage: teste
+  shop:
+    permission: teste
+    description: teste
+    usage: teste
