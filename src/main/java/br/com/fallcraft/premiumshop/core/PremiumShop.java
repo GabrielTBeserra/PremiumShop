@@ -65,5 +65,7 @@ public final class PremiumShop extends JavaPlugin {
         new Shop(this);
         new MenuListener(this);
         new RemoveFromMap(this);
+        new CancelItem(this);
+        new DeleteItem(this);
     }
 }

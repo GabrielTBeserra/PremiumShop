@@ -3,6 +3,7 @@ package br.com.fallcraft.premiumshop.commands;
 import br.com.fallcraft.premiumshop.core.PremiumShop;
 import br.com.fallcraft.premiumshop.data.PluginData;
 import br.com.fallcraft.premiumshop.utils.Ultilities;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,6 +28,12 @@ public class SetItem implements CommandExecutor {
 
         if (!PluginData.itemOpenning.containsKey(player)) {
             sender.sendMessage(Ultilities.formater("&cVoce nao tem nenhum item para editar, use &1/createitem &6<NOME>"));
+            return true;
+        }
+
+
+        if(player.getInventory().getItemInHand().getType().equals(Material.AIR)){
+            sender.sendMessage(Ultilities.formater("&cEscolha qual sera o icone do item!"));
             return true;
         }
 

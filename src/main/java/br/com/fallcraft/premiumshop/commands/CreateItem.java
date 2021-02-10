@@ -38,7 +38,7 @@ public class CreateItem implements CommandExecutor {
 
 
 
-        String itemName = args[0];
+        String itemName = String.join(" ", args);
 
         PluginData.itemOpenning.put(player, new Item(itemName));
 

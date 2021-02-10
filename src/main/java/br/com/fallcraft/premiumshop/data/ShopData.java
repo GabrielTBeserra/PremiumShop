@@ -93,4 +93,16 @@ public class ShopData {
 
         return item;
     }
+
+    public void deleteItem(int id) {
+        try {
+            String newPlayer = "delete from premiumshop where id=" + id;
+
+            PreparedStatement preparedStatement = com.quantum.qcoin.data.ConnectionFactory.getConnection().prepareStatement(newPlayer);
+
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -5,30 +5,38 @@ api-version: 1.8
 authors: [ 1Ursoo ]
 commands:
   createitem:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Cria o item
+    usage: /createitem <nome>
   finishitem:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Finaliza a edicao do item e salve o mesmo
+    usage: /finishitem
   setamount:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Define a quantidade de itens a serem comprados
+    usage: /setamount <quantidade>
   setitem:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Define qual item sera o icone no menu
+    usage: /setitem
   setcommand:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Define qual comando sera executado ao comprar o item
+    usage: /setcommand <Command>
   setprice:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.admin
+    description: Define o valor do item
+    usage: /setprice <valor>
   shop:
-    permission: teste
-    description: teste
-    usage: teste
+    permission: premiumshop.use
+    description: Abre o menu de compra
+    usage: /shop
+  deleteitem:
+    permission: premiumshop.admin
+    description: Apaga o item
+    usage: /deleteitem <id>
+  cancelitem:
+    permission: premiumshop.admin
+    description: Aborta a criacao do item
+    usage: /cancelitem

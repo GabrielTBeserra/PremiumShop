@@ -65,7 +65,5 @@ public class ConfirmBuy extends Menu {
             Bukkit.dispatchCommand(PremiumShop.plugin.getServer().getConsoleSender(), cmd);
         }
         p.closeInventory();
-
-
     }
 }
