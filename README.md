@@ -1,4 +1,8 @@
 # PremiumShop
+## Plugin for Spigot 1.8.8
+### Plugin de shop para ser usado com coins
+
+
 
 
 ## Perms
